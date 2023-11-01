@@ -64,7 +64,6 @@ form{
     /*-webkit-text-fill-color: black;*/
 }
 .todo_list-donetask,
-
 .todo_list-deletetask{
     padding: 0.5rem;
     background: #ff3700;
