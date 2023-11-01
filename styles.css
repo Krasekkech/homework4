@@ -1,0 +1,84 @@
+@font-face {
+    font-family: WebFont;
+    src: url("fonts/PlaypenSans-Bold.ttf");
+}
+
+li{
+    list-style-type: none;
+}
+
+html{
+    font-family: WebFont, serif;
+}
+
+body{
+    background-image: linear-gradient(120deg, royalblue, deepskyblue);
+    min-height: 100vh;
+    color: white;
+}
+.todo_input{
+    display: flex;
+    justify-content: center;
+}
+header>h1{
+    display: flex;
+    justify-content: center;
+    font-size: 24px ;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+.todo_button {
+    color: white;
+    cursor: pointer;
+    background: #43B343FF ;
+    font-size: 14px;
+}
+
+.todo_container{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 33%;
+}
+.todo_list-container{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*!*align-content: center;*!*/
+    /*align-items: flex-start;*/
+    /*flex-wrap: nowrap;*/
+    /*flex-direction: column;*/
+    width: 100%;
+    background-color: white;
+}
+.todo{
+    display: flex;
+    justify-content: space-between;
+}
+.todo_list{
+    display: flex;
+    justify-content: center;
+    color: black;
+    -webkit-text-stroke: 0.5px black;
+    /*-webkit-text-fill-color: black;*/
+}
+.todo_list-donetask,
+.todo_list-deletetask{
+    padding: 0.5rem;
+    background: #ff3700;
+    color: white;
+    border: none;
+    margin-left: 0.2rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.todo_list-donetask{
+    background: rgb(67, 179, 67);
+    display: flex;
+    justify-content: center;
+}
+.todo_list-donetask:active{
+    background: green;
+}
