@@ -45,7 +45,6 @@ function CRUD(e){
     }
     if (item.classList[0] === "todo_list-deletetask"){
         const todo = item.parentElement;
-        // todo.classList.add("fall");
         todo.remove();
     }
 }
