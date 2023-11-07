@@ -11,9 +11,11 @@ function createTodo(event){
     const newList = document.createElement('li');
     newList.innerText = todoInput.value;
 
+
     const doneTaskButton = document.createElement('button');
     doneTaskButton.classList.add('todo_list-donetask');
     newDiv.appendChild(doneTaskButton);
+
 
     newList.classList.add('todo_list');
     newDiv.appendChild(newList);
@@ -25,6 +27,7 @@ function createTodo(event){
 
     const deleteTaskButton = document.createElement('button');
     deleteTaskButton.classList.add('todo_list-deletetask');
+    deleteTaskButton.innerHTML = 'x';
     newDiv.appendChild(deleteTaskButton);
 }
 
@@ -36,7 +39,7 @@ function CRUD(e){
     }
     if (item.classList[0] === "todo_list-deletetask"){
         const todo = item.parentElement;
-        todo.classList.add("fall");
+        // todo.classList.add("fall");
         todo.remove();
     }
 }
