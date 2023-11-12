@@ -3,13 +3,14 @@
     src: url("fonts/PlaypenSans-Bold.ttf");
 }
 
+
 li{
     list-style-type: none;
     padding: 0 0;
     margin: 0 0;
 }
 
-html{
+html, .todo_button, .todo_input{
     font-family: WebFont, serif;
 }
 
@@ -17,10 +18,23 @@ body{
     background-image: linear-gradient(120deg, royalblue, deepskyblue);
     min-height: 100vh;
     color: white;
+    box-sizing: border-box;
+}
+.todo_adding{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin-right: 5px;
+    border-radius: 1em;
+}
+.todo_adding:hover{
+    border: #0f0f0f;
 }
 .todo_input{
     display: flex;
     justify-content: center;
+    border: initial;
+    border-radius: 1em;
 }
 header>h1{
     display: flex;
@@ -36,7 +50,11 @@ form{
     cursor: pointer;
     background: #43B343FF ;
     font-size: 14px;
+    border: initial;
+    border-radius: 1em;
 }
+
+
 
 .todo_container{
     display: flex;
@@ -106,38 +124,79 @@ form{
     text-decoration: line-through black;
 
 }
+/*.todo_list-deletetask {*/
+/*    !* position: absolute; *!*/
+/*    right: 32px;*/
+/*    top: 32px;*/
+/*    width: 32px;*/
+/*    height: 34px;*/
+/*    !* opacity: 0.3; *!*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*    background: white;*/
+/*    border: initial;*/
+/*}*/
+/*.todo_list-deletetask:hover {*/
+/*    color: white;*/
+/*    background: red;*/
+/*}*/
+/*.todo_list-deletetask:before {*/
+/*    !*position: absolute;*!*/
+/*    display: flex;*/
+/*    !* left: 15px; *!*/
+/*    content: '\00d7';*/
+/*    height: 33px;*/
+/*    width: 4px;*/
+/*    background-color: white;*/
+/*    justify-content: space-between;*/
+/*}*/
+
 .todo_list-deletetask {
-    /* position: absolute; */
-    right: 32px;
-    top: 32px;
-    width: 32px;
-    height: 34px;
-    /* opacity: 0.3; */
     display: flex;
-    justify-content: space-around;
-    background: white;
-    border: initial;
-}
-.todo_list-deletetask:hover {
-    color: white;
-    background: red;
-}
-.todo_list-deletetask:before, .todo_list-deletetask:after {
-    position: absolute;
-    display: flex;
-    /* left: 15px; */
-    content: '\00d7';
-    height: 33px;
-    width: 4px;
-    background-color: #a4a0a0;
     justify-content: space-between;
+    /*top: 50%;*/
+    /*right: 50%;*/
+    box-sizing: border-box;
+
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+
+    border: 1px solid #c2c7cc;
+    color: transparent;
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    &:before, &:after {
+        position: absolute;
+        width: 2em;
+        height: 1px;
+        margin-left: 0.05em;
+        content: '';
+        background: #8a9199;
+        transition: all ease 1s;
+        margin-top: 1.3em;
+    }
+
+    &:before {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    &:after {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    &:hover, &:focus {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        border-color: #f26a3d;
+        background: #f26a3d;
+
+        &:before, &:after {
+            background: red;
+        }
+    }
 }
-.todo_list-deletetask:before {
-    transform: rotate(45deg);
-}
-.todo_list-deletetask:after {
-    transform: rotate(-45deg);
-}
-.todo_list-deletetask:before:hover, .todo_list-deletetask:after:hover{
-    background-color: red;
-}
+
