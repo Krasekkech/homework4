@@ -20,6 +20,17 @@ body{
     color: white;
     box-sizing: border-box;
 }
+header>h1{
+    display: flex;
+    justify-content: center;
+    font-size: 24px ;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
 .todo_adding{
     display: flex;
     justify-content: space-between;
@@ -28,24 +39,17 @@ body{
     border-radius: 1em;
 }
 .todo_adding:hover{
-    border: #0f0f0f;
+    /*border: #0f0f0f;*/
 }
+
 .todo_input{
     display: flex;
     justify-content: center;
     border: initial;
     border-radius: 1em;
 }
-header>h1{
-    display: flex;
-    justify-content: center;
-    font-size: 24px ;
-}
-form{
-    display: flex;
-    justify-content: center;
-}
-.todo_button {
+
+.todo_add_button {
     color: white;
     cursor: pointer;
     background: #43B343FF ;
@@ -54,39 +58,34 @@ form{
     border-radius: 1em;
 }
 
-
-
 .todo_container{
     display: flex;
     margin: auto;
     justify-content: center;
     width: 33%;
 }
+
 .todo_list-container{
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*!*align-content: center;*!*/
-    /*align-items: flex-start;*/
-    /*flex-wrap: nowrap;*/
-    /*flex-direction: column;*/
     width: 100%;
     background-color: white;
     padding: 0 0;
 }
+
 .todo{
     display: flex;
     justify-content: space-between;
     border-top: 0.5px solid #0f0f0f;
 }
+
 .todo_list{
     display: flex;
     justify-content: center;
     color: black;
-    /* -webkit-text-stroke: 0.5px black; */
-    /* -webkit-text-fill-color: black; */
     align-content: stretch;
     align-items: center;
 }
+
+/*стилизация кнопок выполнения и удаления задания*/
 .todo_list-donetask{
     padding: 0.5rem;
     background: white;
@@ -95,8 +94,6 @@ form{
     cursor: pointer;
     font-size: 1rem;
 }
-
-
 
 .todo_list-donetask{
     background: #43B343FF;
@@ -107,49 +104,6 @@ form{
 .todo_list-donetask:active{
     background: green;
 }
-
-/*.todo_list-deletetask{*/
-/*    display: inline-block;*/
-/*    color: black;*/
-/*    content: "\00d7";*/
-/*}*/
-
-/*.todo_list-deletetask:hover{*/
-/*    background: red;*/
-/*    color: white;*/
-/*}*/
-
-
-.doneitem{
-    text-decoration: line-through black;
-
-}
-/*.todo_list-deletetask {*/
-/*    !* position: absolute; *!*/
-/*    right: 32px;*/
-/*    top: 32px;*/
-/*    width: 32px;*/
-/*    height: 34px;*/
-/*    !* opacity: 0.3; *!*/
-/*    display: flex;*/
-/*    justify-content: space-around;*/
-/*    background: white;*/
-/*    border: initial;*/
-/*}*/
-/*.todo_list-deletetask:hover {*/
-/*    color: white;*/
-/*    background: red;*/
-/*}*/
-/*.todo_list-deletetask:before {*/
-/*    !*position: absolute;*!*/
-/*    display: flex;*/
-/*    !* left: 15px; *!*/
-/*    content: '\00d7';*/
-/*    height: 33px;*/
-/*    width: 4px;*/
-/*    background-color: white;*/
-/*    justify-content: space-between;*/
-/*}*/
 
 .todo_list-deletetask {
     display: flex;
@@ -198,5 +152,10 @@ form{
             background: red;
         }
     }
+}
+
+.doneitem{
+    text-decoration: line-through black;
+
 }
 

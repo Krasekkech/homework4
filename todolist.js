@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", loadtask)
 
 // селекторы
 const todoInput = document.getElementById('item');
-const todoButton = document.querySelector('.todo_button');
+const todoButton = document.querySelector('.todo_add_button');
 const todoList = document.querySelector('.todo_list-container');
 
 // создаем "слушателей" для наших действий
