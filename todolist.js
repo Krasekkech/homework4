@@ -78,5 +78,4 @@ function todoBody(d){
     newDiv.appendChild(deleteTaskButton);
 
     saveTaskToLocalStorage(d);
-    d = ""
 }
