@@ -12,30 +12,7 @@ todoList.addEventListener("click", CRUD);
 // Создание контейнера для наших задач
 function createTodo(event: Event) {
     event.preventDefault();
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('todo');
-
-    // Кнопка выполненной задачи
-    const doneTaskButton = document.createElement('button');
-    doneTaskButton.classList.add('todo_list-donetask');
-    newDiv.appendChild(doneTaskButton);
-
-    // Сама задача
-    const newList = document.createElement('li');
-    newList.innerText = todoInput.value;
-    newList.classList.add('todo_list');
-    newDiv.appendChild(newList);
-    if (todoInput.value === "") {
-        return null;
-    }
-    todoList.appendChild(newDiv);
-
-    // Кнопка удаления задачи
-    const deleteTaskButton = document.createElement('button');
-    deleteTaskButton.classList.add('todo_list-deletetask');
-    newDiv.appendChild(deleteTaskButton);
-
-    saveTaskToLocalStorage(todoInput.value);
+    todoBody(todoInput.value);
     todoInput.value = "";
 }
 
@@ -70,27 +47,34 @@ function loadTask(event: Event) {
     const data = JSON.parse(localStorage.getItem('item')) as string[] | null;
     if (data) {
         data.forEach(item => {
-            const newDiv = document.createElement('div');
-            newDiv.classList.add('todo');
-
-            // Кнопка выполненной задачи
-            const doneTaskButton = document.createElement('button');
-            doneTaskButton.classList.add('todo_list-donetask');
-            newDiv.appendChild(doneTaskButton);
-
-            // Сама задача
-            const newList = document.createElement('li');
-            newList.innerText = item;
-            newList.classList.add('todo_list');
-            newDiv.appendChild(newList);
-            todoList.appendChild(newDiv);
-
-            // Кнопка удаления задачи
-            const deleteTaskButton = document.createElement('button');
-            deleteTaskButton.classList.add('todo_list-deletetask');
-            // deleteTaskButton.innerHTML = 'x';
-            newDiv.appendChild(deleteTaskButton);
-            saveTaskToLocalStorage(item);
+            todoBody(item)
         });
     }
+}
+
+function todoBody(d: string) {
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('todo');
+
+    // Кнопка выполненной задачи
+    const doneTaskButton = document.createElement('button');
+    doneTaskButton.classList.add('todo_list-donetask');
+    newDiv.appendChild(doneTaskButton);
+
+    // Сама задача
+    const newList = document.createElement('li');
+    newList.innerText = todoInput.value;
+    newList.classList.add('todo_list');
+    newDiv.appendChild(newList);
+    if (d === "") {
+        return null;
+    }
+    todoList.appendChild(newDiv);
+
+    // Кнопка удаления задачи
+    const deleteTaskButton = document.createElement('button');
+    deleteTaskButton.classList.add('todo_list-deletetask');
+    newDiv.appendChild(deleteTaskButton);
+
+    saveTaskToLocalStorage(d);
 }
